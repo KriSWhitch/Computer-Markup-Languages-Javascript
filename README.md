@@ -11,4 +11,4 @@
 - [x] Laboratory work № 7 Work with forms.
 - [x] Laboratory work № 8 Events. Dynamic effects on JavaScript.
 - [x] Laboratory work № 9, 10 The movement of objects and graphics in JavaScript. Create a menu. 
-- [x] Laboratory work № 11 Introducing jQuery.
+- [x] Laboratory work № 11 Introducing jQuery (Lab №8,9,10 performed using jQuery).
