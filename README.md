@@ -3,8 +3,8 @@
 
 - [x] Laboratory work № 0 Repetition of the studied material in the first semester.
 - [x] Laboratory work № 1 Arithmetic, logical operators, comparison operators in JavaScript.
-- [ ] Laboratory work № 2 Functions. Loop operators. Objects Math, Number.
-- [ ] Laboratory work № 3 Inline JavaScript Objects.
+- [x] Laboratory work № 2 Functions. Loop operators. Objects Math, Number.
+- [x] Laboratory work № 3 Inline JavaScript Objects.
 - [ ] Laboratory work № 4 Custom JavaScript objects. Special operators.
 - [ ] Laboratory work № 5 The document object model (DOM). Access to web page elements.
 - [ ] Laboratory work № 6 Browser Object Model (BOM).
