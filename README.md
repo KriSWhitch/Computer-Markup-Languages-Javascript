@@ -2,7 +2,7 @@
 ## The repository contains laboratory work done while learning JavaScript. First year, second semester. Study discipline - Computer Markup Languages
 
 - [x] Laboratory work № 0 Repetition of the studied material in the first semester.
-- [ ] Laboratory work № 1 Arithmetic, logical operators, comparison operators in JavaScript.
+- [x] Laboratory work № 1 Arithmetic, logical operators, comparison operators in JavaScript.
 - [ ] Laboratory work № 2 Functions. Loop operators. Objects Math, Number.
 - [ ] Laboratory work № 3 Inline JavaScript Objects.
 - [ ] Laboratory work № 4 Custom JavaScript objects. Special operators.
