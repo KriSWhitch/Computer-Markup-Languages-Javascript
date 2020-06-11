@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Лабораторная работа №3 | Муковозчик</title>
+	<style>
+		div {
+			margin:20px;
+			padding:10px;
+			text-align: center;
+		}
+		h4 {
+			text-align: center;
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	<h4>Исходный массив</h4>
+	<div id="source"></div>
+	<h4>Методы объекта Math</h4>
+	<div id="math"></div>
+	<h4>Методы объекта Array</h4>
+	<div id="arr"></div>
+	<script>
+		let arr = ['pow', 'pop', 'push', 'shift', 'round', 'floor', 'slice', 'sort'];
+		methodsArray = new Array();
+		methodsArray[0] = arr[1];
+		methodsArray[1] = arr[3];
+		methodsArray[2] = arr[6];
+		methodsArray[3] = arr[7];
+		methodMath = new Array();
+		methodMath[0] = arr[0];
+		methodMath[1] = arr[2];
+		methodMath[2] = arr[4];
+		methodMath[3] = arr[5];
+		// for da condition
+		let Source = document.getElementById('source');
+		for(let i = 0; i < 8; i++) {
+			let newP = document.createElement('p');
+			newP.innerHTML = arr[i];
+			Source.appendChild(newP);
+		}
+		// for MATH object
+		let mathObject = document.getElementById('math');
+		for(let i = 0; i < 4; i++){
+			let newP = document.createElement('p');
+			newP.innerHTML = methodMath[i];
+			mathObject.appendChild(newP);		
+		}
+		// for da Array object
+		let arrObject = document.getElementById('arr');
+		for(let i = 0; i < 4; i++){
+			let newP = document.createElement('p');
+			newP.innerHTML = methodsArray[i];
+			arrObject.appendChild(newP);
+		}
+	</script>
+</body>
+</html>

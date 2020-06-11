@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Лабораторная работа №3 | Муковозчик</title>
+	<style>
+		* {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="foo"></div>
+	<div id="bar"></div>
+	<script>
+		// first part FIO and length
+		let fullName = String('Муковозчик Алексей Витальевич');
+		let forFullName = document.getElementById('foo');
+		let h2 = document.createElement('h2');
+		h2.innerHTML = fullName + ' Длина ФИО: ' + fullName.length;
+		forFullName.appendChild(h2);
+		// second part low reg, up reg + concat
+		let bar = document.getElementById('bar');
+			// low case 
+		let lowName = fullName.toLowerCase();
+		let lowerName = document.createElement('h4');
+		lowerName.innerHTML = lowName;
+		bar.appendChild(lowerName);
+			// upper case
+		let upName = fullName.toUpperCase();
+		let upperName = document.createElement('h4');
+		upperName.innerHTML = upName;
+		bar.appendChild(upperName);
+			// concat
+		let strings = lowName.concat(upName);
+		let newItem = document.createElement('h4');
+		newItem.innerHTML = strings;
+		bar.appendChild(newItem);
+		// ФИО
+		fullName = 'Муковозчик Алексей Витальевич';
+		let alphabet = 'ЙЦУКЕНГШЩЗХФЫВАПРОЛДЖЭЯЧСМИТББЮ';
+		let FIO = '';
+		for(let i = 0; i < fullName.length; i++){
+			for(let j = 0; j < alphabet.length; j++) {
+				if(fullName[i] == alphabet[j]){
+					FIO += fullName[i];
+				}
+			}
+		}
+		let newFIO = document.createElement('h3');
+		newFIO.innerHTML = FIO;
+		bar.appendChild(newFIO);
+
+	</script>
+</body>
+</html>

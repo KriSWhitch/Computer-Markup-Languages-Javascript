@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Лабораторная работа №3 | Муковозчик</title>
+	<style>
+		* {
+			margin:0px;
+			padding: 0px;
+			font-family: Helvetica, sans-serif;
+		}
+		section {
+      	  	background: rgb(14, 113, 226);
+       		color: white;
+	        border-radius: 1em;
+    	    padding: 1em;
+        	position: absolute;
+	        top: 50%;
+	        left: 50%;
+    	    margin-right: -50%;
+        	transform: translate(-50%, -50%) 
+    	}
+    	td {
+    		padding: 10px;
+    		font-size: 16pt;
+    		text-align: center;
+    	}
+	</style>
+</head>
+<body>
+	<section>
+		<table id="Date">
+		<script>
+			// not beatiful drochevo
+			let Now = new Date();
+
+			let Element = document.getElementById('Date');
+			let tr = document.createElement('tr');
+			let td = document.createElement('td');
+
+			// year
+			td.innerHTML = 'Год'; 
+			tr.appendChild(td);
+			td = document.createElement('td');
+			td.innerHTML = Now.getFullYear();
+			tr.appendChild(td);
+			Element.appendChild(tr);
+			// month
+			tr = document.createElement('tr');
+			td = document.createElement('td');
+			td.innerHTML = 'Месяц';
+			tr.appendChild(td);
+			td = document.createElement('td');
+			td.innerHTML = Now.getMonth() + 1; // +1 bc getMonnth() returns number in range [0;11];
+			tr.appendChild(td);
+			Element.appendChild(tr);
+			// day
+			tr = document.createElement('tr');
+			td = document.createElement('td');
+			td.innerHTML = 'День';
+			tr.appendChild(td);
+			td = document.createElement('td');
+			td.innerHTML = Now.getDate(); 
+			tr.appendChild(td);
+			Element.appendChild(tr);
+			// hour
+			tr = document.createElement('tr');
+			td = document.createElement('td');
+			td.innerHTML = 'Час';
+			tr.appendChild(td);
+			td = document.createElement('td');
+			td.innerHTML = Now.getHours(); 
+			tr.appendChild(td);
+			Element.appendChild(tr);
+			// minutes
+			tr = document.createElement('tr');
+			td = document.createElement('td');
+			td.innerHTML = 'Минуты';
+			tr.appendChild(td);
+			td = document.createElement('td');
+			td.innerHTML = Now.getMinutes(); 
+			tr.appendChild(td);
+			Element.appendChild(tr);
+			// seconds
+			tr = document.createElement('tr');
+			td = document.createElement('td');
+			td.innerHTML = 'Секунды';
+			tr.appendChild(td);
+			td = document.createElement('td');
+			td.innerHTML = Now.getSeconds(); 
+			tr.appendChild(td);
+			Element.appendChild(tr);
+	
+		</script>
+	</table>
+</section>
+</body>
+</html>

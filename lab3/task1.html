@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Лабораторная работа №3 | Муковозчик</title>
+	<style>
+		* {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h4>Исходный массив</h4>
+	<div id="source"></div>
+	<h4>Минимум</h4>
+	<div id="min"></div>
+	<h4>Максимум</h4>
+	<div id="max"></div>
+	<script>
+		let Arr = new Array();
+		Arr[0] = 6*Math.PI*Math.PI+3*Math.exp(8);
+		Arr[1] = 2 * Math.cos(4) + Math.cos(12) + 8 * Math.exp(3); 
+		Arr[2] = 3 * Math.sin(9) + Math.log(5) + Math.sqrt(3);
+		Arr[3] = 2 * Math.tan(5) + 6*Math.PI + Math.sqrt(12);
+
+		let Source = document.getElementById('source');
+		for(let i = 0; i < 4; i++){
+			let newItem = document.createElement('p');
+			newItem.innerHTML = Arr[i];
+			newItem.style = "font-weight:bold;"
+			Source.appendChild(newItem);
+		}
+		// min and max values
+		let Min = document.getElementById('min');
+		let Max = document.getElementById('max')
+
+		let newMin = document.createElement('h4');
+		let newMax = document.createElement('h4');
+
+		newMin.innerHTML = getMinOfArray(Arr);
+		newMax.innerHTML = getMaxOfArray(Arr);
+
+		Min.appendChild(newMin);
+		Max.appendChild(newMax);
+
+		function getMinOfArray(numArray) {
+ 			return Math.min.apply(null, numArray);
+		}	
+
+		function getMaxOfArray(numArray) {
+ 			return Math.max.apply(null, numArray);
+		}
+	</script>
+</body>
+</html>

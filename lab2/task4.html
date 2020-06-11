@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task 4</title>
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		td {
+			padding: 10px;
+			border: 1px solid black;
+			text-align: center;
+		}
+		div {
+			margin: auto;
+			margin-left: 10px;
+		}
+		h3 {
+			margin: 30px;
+			text-align: left;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<h3>Первое число</h3>
+	<div id="firstNumber"></div>
+	<h3>Второе число</h3>
+	<div id="secondNumber"></div>
+
+	<script>
+		// first table
+		let a = Number(389);
+
+		let firstTable = document.getElementById('firstNumber');
+
+		task(a, firstTable);
+		// second table
+		let b = Number(31.5874);
+
+		let secondTable = document.getElementById('secondNumber');
+
+		task(b, secondTable);
+		
+		function task(num, elem) {
+	for(let i = 0; i < 5; i++) { 
+			let row = document.createElement('tr');
+				if (i === 0){
+					for(let j = 0; j < 4; j++){
+						let td = document.createElement('td');
+						if (j === 0) { td.innerHTML = 'Число'; }
+						if (j === 1) {	td.innerHTML = 'Метод'; }
+						if (j === 2) { td.innerHTML = 'Результат'; }
+						if (j === 3) { td.innerHTML = 'Описание метода'; }
+						row.appendChild(td);
+					}
+				}
+				if (i === 1){
+					for(let j = 0; j < 4; j++){
+						let td = document.createElement('td');
+						if (j === 0) { td.innerHTML = num; }
+						if (j === 1) {	td.innerHTML = 'toExponential(2)'; }
+						if (j === 2) { td.innerHTML = num.toExponential(2); }
+						if (j === 3) { td.innerHTML = 'Метод toExponential() возвращает строку, представляющую объект a в экспоненциальной записи.'; }
+						row.appendChild(td);
+					}
+				}
+				if (i === 2){
+					for(let j = 0; j < 4; j++){
+						let td = document.createElement('td');
+						if (j === 0) { td.innerHTML = num; }
+						if (j === 1) {td.innerHTML = 'toFixed(1)'; }
+						if (j === 2) { td.innerHTML = num.toFixed(1); }
+						if (j === 3) { td.innerHTML = 'Метод toFixed() форматирует число, используя запись с фиксированной запятой.'; }
+						row.appendChild(td);
+					}
+				}
+				if (i === 3){
+					for(let j = 0; j < 4; j++){
+						let td = document.createElement('td');
+						if (j === 0) { td.innerHTML = num; }
+						if (j === 1) { td.innerHTML = 'toPrecision(2)'; }
+						if (j === 2) { td.innerHTML = num.toPrecision(2); }
+						if (j === 3) { td.innerHTML = 'Метод toPrecision() возвращает строку, представляющую объект a с указанной точностью.'; }
+						row.appendChild(td);
+					}
+				}
+				if (i === 4){
+					for(let j = 0; j < 4; j++){
+						let td = document.createElement('td');
+						if (j === 0) { td.innerHTML = num; }
+						if (j === 1) {td.innerHTML = 'toString(2)'; }
+						if (j === 2) { td.innerHTML = num.toString(2); }
+						if (j === 3) { td.innerHTML = 'Метод toString() возвращает строковое представление указанного объекта a.'; }
+						row.appendChild(td);
+					}
+				}
+			elem.appendChild(row);
+		}
+}
+	</script>
+</body>
+</html>
