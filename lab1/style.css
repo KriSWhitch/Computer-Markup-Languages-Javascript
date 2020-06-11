@@ -1,0 +1,26 @@
+button {
+	border: 1px black solid;
+	font-size: 18px;
+	font-family:Verdana;
+	background-color: rgb(73, 205, 238);
+	color: #ffffff;
+	padding: 20px 15px;
+	margin: 10px;
+}
+
+button:hover {
+	background-color:rgb(31, 131, 224);
+	color: #ffffff ;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+.container {
+	display: inline;
+	margin: 0 auto;
+}
+
+* {
+	margin:0;
+	padding:0;
+}
