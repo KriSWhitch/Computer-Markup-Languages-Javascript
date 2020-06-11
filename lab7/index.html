@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>Лабораторная работа №7</title>
+ </head>
+ <body>
+<script src="script.js"></script>
+<div class="student-form">
+    <textarea id="faculty" placeholder="Факультет информационных технологий" style="height: 4em; width: 32em;"></textarea>
+    <div id="fullName">
+        <input  placeholder="Фамилия" style="margin: 0.5em 0; width: 32em;">
+        <br>
+        <input  placeholder="Имя" style="margin: 0.5em 0; width: 32em">
+        <br>
+    </div>
+    <p style="font-weight: bold;">Специальность </p>
+    <select id="speciality" style="display: inline;">
+        <option  disabled value="">Выберите один из вариантов</option>
+        <option>ПОИТ</option>
+        <option>ИСиТ</option>
+        <option>ПОИБМС</option>
+        <option>ДЭВИ</option>
+    </select>
+    <p style="font-weight: bold;">Курс</p>
+    <div id="course">
+        <input name="year" type="radio" id="one" value="Первый" >
+        <label for="one">1</label>
+
+        <input name="year" type="radio" id="two" value="Второй" >
+        <label for="two">2</label>
+
+
+        <input name="year" type="radio" id="three" value="Третий" >
+        <label for="three">3</label>
+
+
+        <input name="year" type="radio" id="four" value="Четвертый" >
+        <label for="four">4</label>
+    </div>
+    <div id="subjects">
+        <p style="font-weight: bold;">Предметы</p>
+        <input type="checkbox" id="oit" value="ОИТ">
+        <label for="oit">ОИТ</label>
+        <input type="checkbox" id="oap" value="ОАП">
+        <label for="oap">ОАП</label>
+        <input type="checkbox" id="alocvm" value="АЛОЦВМ">
+        <label for="alocvm">АЛОЦВМ</label>
+        <input type="checkbox" id="physics" value="Физика">
+        <label for="physics">Физика</label>
+        <input type="checkbox" id="math" value="Математика">
+        <label for="math">Математика</label>
+
+    </div>
+    <div class="choice" style="margin: 1em 0;">
+        <input style="width:16em" value="Submit" onclick="newForm()" type="submit"/>
+        <input style="width:16em" value="Reset (Shouldn't work)" type="submit"/>
+    </div>
+
+    <div class="print" style="margin: 1em 0;">
+        <button style="width: 32.3em;" onclick="documentPrint()">Напечатать</button>
+    </div>
+</div>
+</body>
+</html>

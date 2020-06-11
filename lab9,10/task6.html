@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+	 <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<title>Лабораторная работа №9,10</title>
+	<nav>
+			  <ul id="ddmenu">
+				<li><a href="#">Главная</a></li>
+				<li><a href="#">Лабораторные работы по JavaScript</a>
+				  <ul>
+					<li><a href="#">Лабораторная работа №1</a></li>
+					<li><a href="#">Лабораторная работа №2</a></li>
+					<li><a href="#">Лабораторная работа №3</a></li>
+					<li><a href="#">Лабораторная работа №4</a></li>
+					<li><a href="#">Лабораторная работа №5</a></li>
+					<li><a href="#">Лабораторная работа №6</a></li>
+					<li><a href="#">Лабораторная работа №7</a></li>
+					<li><a href="#">Лабораторная работа №8</a></li>
+					<li><a href="#">Лабораторная работа №9/10</a></li>
+					<li><a href="#">Лабораторная работа №11</a></li>
+				  </ul>
+				</li>
+				<li><a href="#">Лабораторные работы по XML</a>
+				  <ul>
+					<li><a href="#">Лабораторная работа №1</a></li>
+					<li><a href="#">Лабораторная работа №2</a></li>
+					<li><a href="#">Лабораторная работа №3</a></li>
+					<li><a href="#">Лабораторная работа №4</a></li>
+					<li><a href="#">Лабораторная работа №5</a></li>
+					<li><a href="#">Лабораторная работа №6</a></li>
+					<li><a href="#">Лабораторная работа №7</a></li>
+					<li><a href="#">Лабораторная работа №8</a></li>
+					<li><a href="#">Лабораторная работа №9/10</a></li>
+					<li><a href="#">Лабораторная работа №11</a></li>
+				  </ul>
+				</li>
+				<li><a href="#">Лабораторные работы по HTML5</a>
+				  <ul>
+					<li><a href="#">Лабораторная работа №1</a></li>
+					<li><a href="#">Лабораторная работа №2</a></li>
+					<li><a href="#">Лабораторная работа №3</a></li>
+				  </ul>
+				</li>
+				<li><a href="#">Контакт</a></li>
+			  </ul>
+			</nav>
+			<script>
+				$(document).ready(function(){
+				  $('a').on('click', function(e){
+					e.preventDefault();
+				  });
+					
+				  $('#ddmenu li').hover(function () {
+					 clearTimeout($.data(this,'timer'));
+					 $('ul',this).stop(true,true).slideDown(200);
+				  }, function () {
+					$.data(this,'timer', setTimeout($.proxy(function() {
+					  $('ul',this).stop(true,true).slideUp(200);
+					}, this), 100));
+				  });
+				
+				});
+				</script>
+				
+</body>
+</html>
+

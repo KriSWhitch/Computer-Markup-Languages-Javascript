@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>Лабораторная работа №9,10</title>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ </head>
+<body>
+  <textarea style="cursor: pointer; position: absolute; z-index: 999;" name="empty" id="textArea" cols="30" rows="10">Привет, ты можешь меня передвинуть!</textarea>
+	<img id="ball" src="https://js.cx/clipart/ball.svg" style="cursor: pointer; position: absolute; top: 200px; left: 300px; z-index: 1000;" width="200" height="200" alt="image" >
+<script>
+
+$('#textArea').mousedown( function(event) {
+  
+  let shiftX = event.clientX - textArea.getBoundingClientRect().left;
+  let shiftY = event.clientY - textArea.getBoundingClientRect().top;
+  
+  $('#textArea').css('position', 'absolute');
+  $('#textArea').css('zIndex', '1000');
+  document.body.append(textArea);
+  
+  moveAt(event.pageX, event.pageY);
+  
+  // переносит мяч на координаты (pageX, pageY),
+  // дополнительно учитывая изначальный сдвиг относительно указателя мыши
+  function moveAt(pageX, pageY) {
+    textArea.style.left = pageX - shiftX + 'px';
+    textArea.style.top = pageY - shiftY + 'px';
+  }
+  
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+  
+  // передвигаем мяч при событии mousemove
+  document.addEventListener('mousemove', onMouseMove);
+  
+  // отпустить мяч, удалить ненужные обработчики
+  $('#textArea').mouseup( function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    $('#textArea').mouseup = null;
+  });
+  
+  });
+  
+  $('#textArea').on("dragstart", function() {
+  return false;
+  });
+
+  $('#ball').mousedown( function(event) {
+  
+  let shiftX = event.clientX - ball.getBoundingClientRect().left;
+  let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+  $('#ball').css('position', 'absolute');
+  $('#ball').css('zIndex', '1000');
+  document.body.append(ball);
+  
+  moveAt(event.pageX, event.pageY);
+  
+  // переносит мяч на координаты (pageX, pageY),
+  // дополнительно учитывая изначальный сдвиг относительно указателя мыши
+  function moveAt(pageX, pageY) {
+    ball.style.left = pageX - shiftX + 'px';
+    ball.style.top = pageY - shiftY + 'px';
+  }
+  
+  function onMouseMove(event) {
+    moveAt(event.pageX, event.pageY);
+  }
+  
+  // передвигаем мяч при событии mousemove
+  document.addEventListener('mousemove', onMouseMove);
+  
+  // отпустить мяч, удалить ненужные обработчики
+  $('#ball').mouseup( function() {
+    document.removeEventListener('mousemove', onMouseMove);
+    $('#ball').mouseup = null;
+  });
+  
+  });
+  
+  $('#ball').on("dragstart", function() {
+  return false;
+  });
+      </script>
+</body>
+        
+</html>
+

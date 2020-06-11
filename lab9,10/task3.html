@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>Лабораторная работа №9,10</title>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script >
+	function animate({timing, draw, duration}) {
+
+	let start = performance.now();
+
+	requestAnimationFrame(function animate(time) {
+	// timeFraction изменяется от 0 до 1
+	let timeFraction = (time - start) / duration;
+	if (timeFraction > 1) timeFraction = 1;
+
+	// вычисление текущего состояния анимации
+	let progress = timing(timeFraction);
+
+	draw(progress); // отрисовать её
+
+	if (timeFraction < 1) {
+		requestAnimationFrame(animate);
+	}
+
+	});
+	}
+  </script>
+ </head>
+ <body>
+	<div style="height: 300px; border-bottom: 2px solid black;" id="field">
+		<img alt="img" src="https://js.cx/clipart/ball.svg" style="position:relative; cursor: pointer;" width="40" height="40" id="ball">
+	  </div>
+	
+	  <script>
+		function makeEaseOut(timing) {
+		  return function(timeFraction) {
+			return 1 - timing(1 - timeFraction);
+		  }
+		}
+	
+		function bounce(timeFraction) {
+		  for (let a = 0, b = 1, result; 1; a += b, b /= 2) {
+			if (timeFraction >= (7 - 4 * a) / 11) {
+			  return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2)
+			}
+		  }
+		}
+	
+		function quad(timeFraction) {
+		  return Math.pow(timeFraction, 2);
+		}
+	
+		$('#ball').click( function() {
+	
+		  let height = field.clientHeight - ball.clientHeight;
+		  let width = 500;
+	
+		  animate({
+			duration: 3000,
+			timing: makeEaseOut(bounce),
+			draw: function(progress) {
+			  $('#ball').css('top', height * progress + 'px' )
+			}
+		  });
+	
+		  animate({
+			duration: 2900,
+			timing: makeEaseOut(quad),
+			draw: function(progress) {
+			  $('#ball').css('left', width * progress + 'px' )
+			}
+		  });
+		});
+		
+		
+	  </script>
+ </body>
+</html>
+

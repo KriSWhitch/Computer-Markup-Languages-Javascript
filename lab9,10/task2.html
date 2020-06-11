@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <title>Лабораторная работа №9,10</title>
+ </head>
+ <body>
+	 <img id="ride" style="position: relative; cursor: pointer;" src="img/paint.gif" alt="img">
+	 <script>
+		$('#ride').click(function(){
+			let start = Date.now();
+			let timer = setInterval(function(){
+				let timePassed = Date.now() - start;
+				let operation = timePassed / 3 + 'px';
+				$('#ride').css('left', operation)
+				if (timePassed > 2000) clearInterval(timer);
+			}, 20);
+		});
+	 </script>
+ </body>
+</html>
+
